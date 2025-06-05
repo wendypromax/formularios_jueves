@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Primer Formulario HTML</title>
+    <link rel="stylesheet" href="_css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📝 Formulario de Registro</h1>
+
+      <!-- FORMULARIO HTML -->
+      <form id="miFormulario">
+        <!-- Campo de texto simple -->
+        <div class="form-group">
+          <label for="nombre">Nombre completo:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            required
+            placeholder="Escribe tu nombre completo"
+            autofocus
+            pattern="[A-Za-záéíóúÁÉÍÓÚñÑ ]{3,40}"
+            title="Solo letras y espacios, entre 3 y 40 caracteres"
+          />
+        </div>
+
+        <!-- Campo de email -->
+        <div class="form-group">
+          <label for="email">Correo electrónico:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="ejemplo@correo.com"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Formato de correo electrónico válido"
+          />
+        </div>
+
+        <!-- Campo de número -->
+        <div class="form-group">
+          <label for="edad">Edad:</label>
+          <input
+            type="number"
+            id="edad"
+            name="edad"
+            min="18"
+            max="100"
+            required
+            placeholder="Tu edad"
+          />
+        </div>
+
+        <!-- Campo de selección -->
+        <div class="form-group">
+          <label for="ciudad">Ciudad:</label>
+          <select id="ciudad" name="ciudad" required>
+            <option value="">Selecciona tu ciudad</option>
+            <option value="bogota">Bogotá</option>
+            <option value="medellin">Medellín</option>
+            <option value="cali">Cali</option>
+            <option value="barranquilla">Barranquilla</option>
+            <option value="otra">Otra</option>
+          </select>
+        </div>
+
+        <!-- Campo: Color favorito -->
+        <div class="form-group">
+          <label for="favcolor">Selecciona tu color favorito:</label>
+          <input type="color" id="favcolor" name="favcolor" />
+        </div>
+
+        <!-- Campo: Fecha de nacimiento -->
+        <div class="form-group">
+          <label for="fecha1">Ingresa tu fecha de nacimiento:</label>
+          <input type="date" id="fecha1" name="fecha" required />
+        </div>
+
+        <!-- Campo: Fecha y hora actual -->
+        <div class="form-group">
+          <label for="fecha2">Ingresa la fecha y hora actual:</label>
+          <input type="datetime-local" id="fecha2" name="fecha2" />
+        </div>
+
+        <!-- Campo: Búsqueda en Google -->
+        <div class="form-group">
+          <label for="gsearch">buscar:</label>
+          <input type="search" id="gsearch" name="gsearch" />
+        </div>
+
+        <!-- Campo: Cargar archivo -->
+        <div class="form-group">
+          <label for="myfile">certificado tecnico o tecnologo:</label>
+          <input type="file" id="myfile" name="myfile" />
+        </div>
+
+        <!-- Campo oculto: ID de usuario -->
+        <input type="hidden" name="usuario_id" value="123" />
+
+        <!-- Campo: Mes y año actual -->
+        <div class="form-group">
+          <label for="bdaymonth">Mes y año de graduacion:</label>
+          <input type="month" id="bdaymonth" name="bdaymonth" />
+        </div>
+
+        <!-- Campo: Número entre 1 y 5 -->
+        <div class="form-group">
+          <label for="quantity">Años de experiencia entre 1 y 5</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+            max="5"
+            pattern="[1-5]"
+            title="Ingresa un número entre 1 y 5"
+          />
+        </div>
+
+        <!-- Campo: Contraseña -->
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
+            title="La contraseña debe tener al menos 8 caracteres, incluyendo letras y números."
+            required
+          />
+        </div>
+
+        <!-- Campo: Rango -->
+        <div class="form-group">
+          <label for="rango">Selecciona un valor (0-100) de conocimiento:</label>
+          <input type="range" id="rango" name="rango" min="0" max="100" />
+        </div>
+
+        <!-- Campo: Teléfono -->
+        <div class="form-group">
+          <label for="telefono">Teléfono:</label>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            placeholder="Ej: 3001234567"
+            pattern="[0-9]{10}"
+            title="Ingresa un número de teléfono válido de 10 dígitos"
+          />
+        </div>
+
+        <!-- Campo: Hora -->
+        <div class="form-group">
+          <label for="hora">Selecciona hora actual:</label>
+          <input type="time" id="hora" name="hora" />
+        </div>
+
+        <!-- Campo: URL -->
+        <div class="form-group">
+          <label for="url">Sitio web personal:</label>
+          <input
+            type="url"
+            id="url"
+            name="url"
+            placeholder="https://tusitio.com"
+            pattern="https?://.+"
+            title="Introduce una URL que comience con http:// o https://"
+          />
+        </div>
+
+        <!-- Campo: Semana -->
+        <div class="form-group">
+          <label for="semana">Selecciona una semana libre de curso :</label>
+          <input type="week" id="semana" name="semana" />
+        </div>
+
+        <!-- Campos de radio -->
+        <div class="form-group">
+          <label>Experiencia en programación:</label><br />
+
+          <label
+            style="display: inline-flex; align-items: center; margin-bottom: 5px"
+          >
+            <input
+              type="radio"
+              id="principiante"
+              name="experiencia"
+              value="principiante"
+              required
+            />
+            <span style="margin-left: 5px">Principiante</span>
+          </label
+          ><br />
+
+          <label
+            style="display: inline-flex; align-items: center; margin-bottom: 5px"
+          >
+            <input
+              type="radio"
+              id="intermedio"
+              name="experiencia"
+              value="intermedio"
+            />
+            <span style="margin-left: 5px">Intermedio</span>
+          </label
+          ><br />
+
+          <label style="display: inline-flex; align-items: center">
+            <input
+              type="radio"
+              id="avanzado"
+              name="experiencia"
+              value="avanzado"
+            />
+            <span style="margin-left: 5px">Avanzado</span>
+          </label>
+        </div>
+        <!-- Checkbox -->
+        <div class="form-group">
+          <input type="checkbox" id="acepto" name="acepto" required />
+          <label for="acepto" style="display: inline; margin-left: 5px">
+            Acepto los términos y condiciones
+          </label>
+        </div>
+
+        <!-- Área de texto -->
+        <div class="form-group">
+          <label for="comentarios">Comentarios adicionales:</label>
+          <textarea
+            id="comentarios"
+            name="comentarios"
+            rows="4"
+            placeholder="Cuéntanos algo más sobre ti (opcional)"
+          ></textarea>
+        </div>
+
+        <!-- Botón de envío -->
+        <div class="form-group">
+          <button type="button">Cancelar</button>
+        </div>
+
+        <!-- Campo: Reset -->
+        <div class="form-group">
+          <input type="reset" value="Restablecer formulario" />
+        </div>
+
+        <!-- Campo: Imagen como botón de envío -->
+        <div class="form-group boton-centrado">
+          <input
+            type="image"
+            src="../_img/enviar.png"
+            alt="Submit"
+            style="width: 60px; height: 60px"
+          />
+        </div>
+      </form>
+
+      <!-- ÁREA DONDE SE MOSTRARÁN LOS RESULTADOS -->
+      <div id="resultado" class="resultado">
+        <h3>✅ ¡Formulario enviado exitosamente!</h3>
+        <p>Estos son los datos que enviaste:</p>
+        <div id="datosEnviados"></div>
+      </div>
+    </div>
+  </body>
+</html>
